@@ -19,8 +19,6 @@ export const scrap = async () => {
     }
   );
 
-  await page.screenshot({ path: "./screenshot.png", fullPage: true });
-
   const carTitles = await page.$$eval("a.damage-info", (titles) =>
     titles.map((title) => title.textContent)
   );
