@@ -2,18 +2,8 @@ import puppeteer from "puppeteer";
 
 export const scrap = async () => {
   const browser = await puppeteer.launch({
-    executablePath:
-      process.env.NODE_ENV === "production"
-        ? process.env.PUPPETEER_EXECUTABLE_PATH
-        : puppeteer.executablePath(),
-    args: [
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      "--headless",
-      "--disable-gpu",
-      "--no-zygote",
-      "--window-size=1920x1080",
-    ],
+    headless: true,
+    args: ["--no-sandbox", "--disable-gpu"],
   });
   const page = await browser.newPage();
 
