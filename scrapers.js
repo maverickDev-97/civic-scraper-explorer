@@ -15,12 +15,12 @@ export const scrap = async () => {
   );
 
   await page.goto(
-    "https://bid.cars/en/search/archived/results?search-type=filters&type=Automobile&year-from=2018&year-to=2021&make=Honda&model=Civic&auction-type=All",
-    {
-      waitUntil: "networkidle0",
-      timeout: 0,
-    }
+    "https://bid.cars/en/search/archived/results?search-type=filters&type=Automobile&year-from=2018&year-to=2021&make=Honda&model=Civic&auction-type=All"
   );
+
+  await new Promise((resolve) => {
+    setTimeout(resolve, 15000);
+  });
 
   console.log("Page is loaded");
 
