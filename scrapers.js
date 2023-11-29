@@ -48,7 +48,7 @@ export const scrap = async () => {
   console.log(carVinCodes);
 
   const carPrices = await page.$$eval("div.price-box", (prices) =>
-    prices.map((price) => price.textContent.slice(16))
+    prices.map((price) => price.textContent.slice(12))
   );
 
   console.log("car prices here:");
