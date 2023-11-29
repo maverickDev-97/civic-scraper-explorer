@@ -25,8 +25,11 @@ const cleanArchivedCars = async () => {
 };
 
 export const getCurrentCars = (_, res) => {
+  console.log("Getting current cars...");
   scrap()
     .then(async (data) => {
+      console.log("----------THEN----------");
+      console.log(data);
       await insertCarsToDB(data);
       return res.status(200).json(data);
     })
